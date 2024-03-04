@@ -12,7 +12,11 @@ bot = Bot(TOKEN, parse_mode='HTML')
 
 url_question = 'https://ask.okeit.edu/questions' 
 
-
+async def fetch_html(url):
+    headers = {"User-Agent": generate_user_agent()}
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, headers=headers, ssl=False) as response:
+            return await response.text()
 
 async def submitting_question(question):
     data = {'question': str(question)}
