@@ -87,9 +87,9 @@ async def get_vp(message: Message, state: FSMContext):
             db.commit()
             db.close()
             
-            await message.answer(await app.submitting_question(vpp), reply_markup=keyboards.back)
+            await message.answer("Вопрос отправлен, вам придет уведосление когда Директор ответит на ваш вопрос.", reply_markup=keyboards.back)
 
-            await app.write_and_send_to_db()
+            # await app.write_and_send_to_db()
             await state.clear()
     else:
         await message.reply("Напиши текст!", reply_markup=keyboards.back)

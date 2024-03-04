@@ -1,0 +1,10 @@
+[Unit]
+Description=My TG Bot OKEI
+After=multi-user.target
+[Service]
+Type=simple
+ExecStart=python3 /home/student/test_bot/bot.py
+WorkingDirectory=/home/student/test_bot
+Restart=always
+[Install]
+WantedBy=multi-user.target
