@@ -1,0 +1,11 @@
+[Unit]
+Description= otpravca question
+After=multi-user.target
+[Service]
+Type=simple
+ExecStart=python3 /home/student/test_bot/sending_answer.py 
+WorkingDirectory=/home/student/test_bot
+Restart=always
+[Install]
+WantedBy=multi-user.target
+
